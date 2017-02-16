@@ -143,11 +143,11 @@ again_b:        matrix_val = InputBox("ENTER VALUE OF [B]" & "{" & i + 1 & " , "
         array_a(1, 0) = array_f(1, 2)
         array_a(1, 1) = array_f(2, 2)
 
-        Dim array_cof_a(2, 2) As Double
-        array_cof_a(0, 0) = array_a(1, 1)
-        array_cof_a(0, 1) = -array_a(1, 0)
-        array_cof_a(1, 0) = -array_a(0, 1)
-        array_cof_a(1, 1) = array_a(0, 0)
+        Dim array_adj_a(2, 2) As Double
+        array_adj_a(0, 0) = array_a(1, 1)
+        array_adj_a(0, 1) = -array_a(1, 0)
+        array_adj_a(1, 0) = -array_a(0, 1)
+        array_adj_a(1, 1) = array_a(0, 0)
 
         Dim det_a As Double
         det_a = array_a(0, 0) * array_a(1, 1) + array_a(0, 1) * (-array_a(1, 0))
