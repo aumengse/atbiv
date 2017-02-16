@@ -30,7 +30,6 @@ again_fc:       matrix_val = InputBox("ENTER VALUE OF [FC]" & "{" & i + 1 & " , 
 
         '------------enter values of B
         Dim array_b(b_x, b_y) As Double
-        Dim suffix As Char
 
         For i As Integer = 0 To b_x - 1
             Dim obj_b(b_y - 1) As Object
@@ -40,22 +39,6 @@ again_b:        matrix_val = InputBox("ENTER VALUE OF [B]" & "{" & i + 1 & " , "
                     If matrix_val.Contains("/") Then
                         array_b(i, ii) = fractionaltoDecimal(matrix_val.ToString)
                         obj_b(ii) = fractionaltoDecimal(matrix_val.ToString)
-                    ElseIf Char.IsLetter(matrix_val) = True Then
-                        suffix = matrix_val(0).ToString.ToUpper
-                        matrix_val = 1
-                        array_b(i, ii) = matrix_val
-                        obj_b(ii) = matrix_val.ToString + suffix
-                    ElseIf Regex.IsMatch(matrix_val, "^[A-Za-z0-9]+$") Then
-                        If Regex.IsMatch(matrix_val, "^[0-9]+$") Then
-                            array_b(i, ii) = matrix_val
-                            obj_b(ii) = matrix_val
-                        Else
-                            suffix = matrix_val(1).ToString.ToUpper
-                            matrix_val = matrix_val(0)
-                            array_b(i, ii) = Double.Parse(matrix_val)
-                            obj_b(ii) = matrix_val + suffix
-                        End If
-
                     Else
                         array_b(i, ii) = matrix_val
                         obj_b(ii) = matrix_val
