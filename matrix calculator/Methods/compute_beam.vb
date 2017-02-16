@@ -68,22 +68,6 @@ again_b:        matrix_val = InputBox("ENTER VALUE OF [B]" & "{" & i + 1 & " , "
             Main_calculator.dgv_b.Rows.Add(obj_b)
         Next
 
-
-        'For i As Integer = 0 To b_x - 1
-        '    Dim obj_b(b_y - 1) As Object
-        '    For ii As Integer = 0 To b_y - 1
-        '        matrix_val = InputBox("ENTER VALUE OF [B]" & "{" & i + 1 & " , " & ii + 1 & "}")
-        '        If matrix_val.Contains("/") Then
-        '            array_b(i, ii) = fractionaltoDecimal(matrix_val.ToString)
-        '            obj_b(ii) = fractionaltoDecimal(matrix_val.ToString)
-        '        Else
-        '            array_b(i, ii) = matrix_val
-        '            obj_b(ii) = matrix_val
-        '        End If
-        '    Next
-        '    Main_calculator.dgv_b.Rows.Add(obj_b)
-        'Next
-
         '--------------------B Transpose
         Dim array_b_transpose(b_y, b_x) As Double
 
@@ -151,6 +135,26 @@ again_b:        matrix_val = InputBox("ENTER VALUE OF [B]" & "{" & i + 1 & " , "
             result_f.dgv_f.Rows.Add(obj_result)
         Next
         result_f.Show()
+
+        '--------------get matrix A from the result of F
+        Dim array_a(2, 2) As Double
+        array_a(0, 0) = array_f(1, 1)
+        array_a(0, 1) = array_f(2, 1)
+        array_a(1, 0) = array_f(1, 2)
+        array_a(1, 1) = array_f(2, 2)
+
+        Dim array_cof_a(2, 2) As Double
+        array_cof_a(0, 0) = array_a(1, 1)
+        array_cof_a(0, 1) = -array_a(1, 0)
+        array_cof_a(1, 0) = -array_a(0, 1)
+        array_cof_a(1, 1) = array_a(0, 0)
+
+        Dim det_a As Double
+        det_a = array_a(0, 0) * array_a(1, 1) + array_a(0, 1) * (-array_a(1, 0))
+
+        MsgBox(det_a)
+
+
 
     End Sub
 
