@@ -10,7 +10,7 @@ Public Class Main_calculator
     End Sub
 
     Private Sub getValues()
-        If chosen_cal = "BEAM" Then
+        If chosen_cal = "BEAM" Or chosen_cal = "FRAME" Then
             fc_x = txtFC_x.Text
             fc_y = txtFC_y.Text
 
@@ -37,35 +37,7 @@ Public Class Main_calculator
                 count += 1
                 countxx += 1
             End While
-            beam_computation(fc_x, fc_y, b_x, b_y)
-        ElseIf chosen_cal = "FRAME" Then
-            fc_x = txtFC_x.Text
-            fc_y = txtFC_y.Text
-
-            b_x = txtB_x.Text
-            b_y = txtB_y.Text
-
-            dgv_fc.ColumnCount = fc_y
-            dgv_fc.ColumnHeadersVisible = True
-
-            dgv_b.ColumnCount = b_y
-            dgv_b.ColumnHeadersVisible = True
-
-            Dim count As Integer = 0
-            Dim countxx As Integer = count + 1
-
-            While count < fc_y
-                dgv_fc.Columns(count).Name = "[FC]" & countxx
-                count += 1
-                countxx += 1
-            End While
-
-            While count < b_y
-                dgv_b.Columns(count).Name = "[B]" & countxx
-                count += 1
-                countxx += 1
-            End While
-            frame_computation(fc_x, fc_y, b_x, b_y)
+            beamFrame_computation(fc_x, fc_y, b_x, b_y)
         ElseIf chosen_cal = "TRUSS" Then
             fc_x = txtFC_x.Text
             fc_y = txtFC_y.Text
