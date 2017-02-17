@@ -37,7 +37,12 @@ Public Class Main_calculator
                 count += 1
                 countxx += 1
             End While
-            beamFrame_computation(fc_x, fc_y, b_x, b_y)
+
+            If chosen_cal = "BEAM" Then
+                beam_computation(fc_x, fc_y, b_x, b_y)
+            Else
+                frame_computation(fc_x, fc_y, b_x, b_y)
+            End If
         ElseIf chosen_cal = "TRUSS" Then
             fc_x = txtFC_x.Text
             fc_y = txtFC_y.Text

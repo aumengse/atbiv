@@ -115,7 +115,8 @@
     <Compile Include="Forms\VIEWS\result_r.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Methods\compute_beam_frame.vb" />
+    <Compile Include="Methods\compute_beam.vb" />
+    <Compile Include="Methods\compute_frame.vb" />
     <Compile Include="Methods\compute_truss.vb" />
     <Compile Include="Methods\functions.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

@@ -1,7 +1,5 @@
-﻿Imports System.Text.RegularExpressions
-
-Module compute_beam_frame
-    Public Sub beamFrame_computation(ByVal fc_x As Integer, ByVal fc_y As Integer, ByVal b_x As Integer, ByVal b_y As Integer)
+﻿Module compute_frame
+    Public Sub frame_computation(ByVal fc_x As Integer, ByVal fc_y As Integer, ByVal b_x As Integer, ByVal b_y As Integer)
         Dim res_q_sum
         Dim matrix_val
 
@@ -121,8 +119,8 @@ again_b:        matrix_val = InputBox("ENTER VALUE OF [B]" & "{" & i + 1 & " , "
 
         '----------------initialize given value
         Dim array_given(2, 1) As Double
-        array_given(0, 0) = 12
-        array_given(1, 0) = 60
+        array_given(0, 0) = -16
+        array_given(1, 0) = 96
 
         Dim w As Double = 20
 
